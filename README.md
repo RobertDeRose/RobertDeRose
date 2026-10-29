@@ -54,6 +54,7 @@ flowchart LR
 <!-- releases:start -->
 | Release | Date |
 | --- | --- |
+| [atomixos v0.1.0](https://github.com/RobertDeRose/atomixos/releases/tag/v0.1.0) | 2026-10-29 |
 | [nixstasis v0.3.0](https://github.com/RobertDeRose/nixstasis/releases/tag/v0.3.0) | 2026-10-22 |
 | [nix-hex-box v1.3.0](https://github.com/RobertDeRose/nix-hex-box/releases/tag/v1.3.0) | 2026-10-22 |
 | [container-compose-plugin v0.3.0](https://github.com/RobertDeRose/container-compose-plugin/releases/tag/v0.3.0) | 2026-10-18 |
