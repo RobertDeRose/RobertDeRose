@@ -1,19 +1,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="banner-dark.svg">
-  <img alt="robert@derose ~ $ whoami: Robert DeRose, Nix, embedded Linux, device fleets, Apple containers" src="banner-light.svg">
+  <img alt="Terminal: whoami prints Robert DeRose, Nix, embedded Linux, device fleets, Apple containers; nix flake show lists nixstasis and atomixos under fleet, and container-compose-plugin, container-runtime-krun and nix-hex-box under darwin" src="banner-light.svg">
 </picture>
-
-```
-$ nix flake show github:RobertDeRose
-github:RobertDeRose
-├───fleet
-│   ├───nixstasis       fleet monitoring + remote access, zero inbound ports
-│   └───atomixos        NixOS for embedded devices
-└───darwin
-    ├───container-compose-plugin   docker compose for Apple container
-    ├───container-runtime-krun     libkrun VM runtime for Apple container
-    └───nix-hex-box                nix-darwin Linux builder on Apple containers
-```
 
 ### Building
 
