@@ -36,7 +36,8 @@ flowchart LR
   nixcfg -- flake input --> hex
   tap -- brew install --> compose
   atomix -- flake input --> stasis
-  hex -. can build Linux for .-> atomix
+  hex -- builds Linux for --> atomix
+  hex -- builds Linux for --> nixcfg
 
   classDef c fill:#363a4f,stroke:#c6a0f6,color:#cad3f5
   classDef m fill:#363a4f,stroke:#8aadf4,color:#cad3f5
