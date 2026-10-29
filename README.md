@@ -72,6 +72,7 @@ flowchart LR
 | [nix-hex-box v1.3.0](https://github.com/RobertDeRose/nix-hex-box/releases/tag/v1.3.0) | 2026-10-22 |
 | [container-compose-plugin v0.3.0](https://github.com/RobertDeRose/container-compose-plugin/releases/tag/v0.3.0) | 2026-10-18 |
 | [maison v0.2.0](https://github.com/RobertDeRose/maison/releases/tag/v0.2.0) | 2026-08-06 |
+| [log_config_watcher v0.3.1](https://github.com/RobertDeRose/log_config_watcher/releases/tag/v0.3.1) | 2025-04-18 |
 <!-- releases:end -->
 
 <p align="center">
