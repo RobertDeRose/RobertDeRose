@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 186" width="880" height="186">
+  <style>text { font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace; font-size: 18px; white-space: pre; }</style>
+  <rect width="880" height="186" rx="12" fill="#24273a"/>
+  <rect x="0.5" y="0.5" width="879" height="185" rx="11.5" fill="none" stroke="#181926"/>
+  <text x="24" y="62" fill="#6e738d">╭─</text>
+    <circle cx="66" cy="56.0" r="15.0" fill="#363a4f"/>
+  <rect x="66" y="41" width="197.27999999999997" height="30" fill="#363a4f"/>
+  <text y="62"><tspan x="78.0" fill="#c6a0f6">❄ </tspan><tspan x="106.1" fill="#cad3f5">robert</tspan><tspan x="170.9" fill="#7dc4e4">@derose </tspan></text>
+  <rect x="263.28" y="41" width="14" height="30" fill="#494d64"/>
+  <path d="M263.28 41 L277.28 56.0 L263.28 71 Z" fill="#363a4f"/>
+  <rect x="263.28" y="41" width="221.03999999999996" height="30" fill="#494d64"/>
+  <text y="62"><tspan x="275.3" fill="#8aadf4">▸ </tspan><tspan x="303.4" fill="#cad3f5">~ </tspan><tspan x="325.0" fill="#a6da95">⎇ </tspan><tspan x="353.0" fill="#cad3f5">main </tspan><tspan x="407.0" fill="#c6a0f6">❄ </tspan><tspan x="435.1" fill="#b8c0e0">pure</tspan></text>
+  <rect x="484.31999999999994" y="41" width="14" height="30" fill="#5b6078"/>
+  <path d="M484.31999999999994 41 L498.31999999999994 56.0 L484.31999999999994 71 Z" fill="#494d64"/>
+  <rect x="484.31999999999994" y="41" width="100.08000000000004" height="30" fill="#5b6078"/>
+  <text y="62"><tspan x="496.3" fill="#f4dbd6">◷ </tspan><tspan x="524.4" fill="#cad3f5">09:41</tspan></text>
+  <path d="M584.4 41 L598.4 56.0 L584.4 71 Z" fill="#5b6078"/>
+  <text x="24" y="104" fill="#6e738d">╰─<tspan fill="#a6da95" font-weight="700">$ </tspan></text>
+  <clipPath id="type"><rect x="78" y="82" height="30" width="0">
+    <animate attributeName="width" begin="0.6s" dur="0.72s" values="0.0;10.8;21.6;32.4;43.2;54.0;64.8" keyTimes="0.0000;0.1667;0.3333;0.5000;0.6667;0.8333;1.0000" calcMode="discrete" fill="freeze"/>
+  </rect></clipPath>
+  <text x="78" y="104" fill="#cad3f5" clip-path="url(#type)">whoami</text>
+  <rect x="78" y="87" width="10.8" height="21" fill="#cad3f5">
+    <animate attributeName="x" begin="0.6s" dur="0.72s" values="78.0;88.8;99.6;110.4;121.2;132.0;142.8" keyTimes="0.0000;0.1667;0.3333;0.5000;0.6667;0.8333;1.0000" calcMode="discrete" fill="freeze"/>
+    <animate attributeName="opacity" begin="1.32s" dur="1s" values="1;0" calcMode="discrete" repeatCount="indefinite"/>
+  </rect>
+  <text x="24" y="146" opacity="0" fill="#b8c0e0">  <tspan fill="#cad3f5" font-weight="700">Robert DeRose</tspan> · Nix · embedded Linux · device fleets · Apple containers
+    <animate attributeName="opacity" begin="1.52s" dur="0.3s" from="0" to="1" fill="freeze"/>
+  </text>
+</svg>

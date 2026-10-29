@@ -1,0 +1,38 @@
+name: Refresh README
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build release table
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          {
+            echo "| Release | Date |"
+            echo "| --- | --- |"
+            gh repo list RobertDeRose --source --visibility=public --limit 200 \
+              --json name,url,latestRelease \
+              --jq '[.[] | select(.latestRelease)]
+                    | sort_by(.latestRelease.publishedAt) | reverse | .[:5][]
+                    | "| [\(.name) \(.latestRelease.tagName)](\(.url)/releases/tag/\(.latestRelease.tagName)) | \(.latestRelease.publishedAt[:10]) |"'
+          } > table.md
+          perl -0pi -e 'BEGIN { local $/; open my $f, "<", "table.md"; $t = <$f> }
+                        s/(<!-- releases:start -->\n).*?(<!-- releases:end -->)/$1$t$2/s' README.md
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "chore: refresh recent releases" || exit 0
+          git push
