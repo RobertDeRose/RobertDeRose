@@ -20,7 +20,6 @@ flowchart LR
   subgraph cfg["❄ how my machines are built"]
     direction TB
     nixcfg["<b>nix-config</b><br/>my Macs + Linux boxes"]
-    maison["<b>maison</b><br/>the reusable framework"]
   end
   subgraph mac["▸ Apple container"]
     direction TB
@@ -35,8 +34,6 @@ flowchart LR
     stasis["<b>nixstasis</b><br/>fleet monitoring, no inbound ports"]
   end
   nixcfg -- flake input --> hex
-  maison -- flake input --> hex
-  nixcfg -. same stack .- maison
   tap -- brew install --> compose
   atomix -- flake input --> stasis
   hex -. can build Linux for .-> atomix
@@ -45,7 +42,7 @@ flowchart LR
   classDef m fill:#363a4f,stroke:#8aadf4,color:#cad3f5
   classDef f fill:#363a4f,stroke:#a6da95,color:#cad3f5
   classDef priv stroke-dasharray:5 4
-  class nixcfg,maison c
+  class nixcfg c
   class hex,compose,krun,tap m
   class atomix,stasis f
   class nixcfg priv

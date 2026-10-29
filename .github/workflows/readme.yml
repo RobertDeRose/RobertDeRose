@@ -23,7 +23,7 @@ jobs:
             echo "| --- | --- |"
             gh repo list RobertDeRose --source --visibility=public --limit 200 \
               --json name,url,latestRelease \
-              --jq '[.[] | select(.latestRelease)]
+              --jq '[.[] | select(.latestRelease) | select(.name | IN("nixstasis", "atomixos", "container-runtime-krun", "container-compose-plugin", "nix-hex-box"))]
                     | sort_by(.latestRelease.publishedAt) | reverse | .[:5][]
                     | "| [\(.name) \(.latestRelease.tagName)](\(.url)/releases/tag/\(.latestRelease.tagName)) | \(.latestRelease.publishedAt[:10]) |"'
           } > table.md
