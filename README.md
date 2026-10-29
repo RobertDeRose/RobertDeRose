@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="banner-dark.svg">
-  <img alt="Terminal: whoami prints Robert DeRose, Nix, embedded Linux, device fleets, Apple containers; nix flake show lists nixstasis and atomixos under fleet, and container-compose-plugin, container-runtime-krun and nix-hex-box under darwin" src="banner-light.svg">
+  <img alt="Terminal: whoami prints Embedded Linux, nix, nix-darwin, IoT, containers; nix flake show lists nixstasis and atomixos under fleet, and container-compose-plugin, container-runtime-krun and nix-hex-box under darwin" src="banner-light.svg">
 </picture>
 
 ### Building

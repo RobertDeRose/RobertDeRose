@@ -77,8 +77,7 @@ for name, p in PAL.items():
     els.append(prompt(p, y, STAMP, 0)); y += LH + 4
     s, t = command(p, y, "whoami", 0.6); els.append(s); y += LH
     t += 0.25
-    els.append(line(p, y, [(PADX + 42, "Robert DeRose", "text", True),
-                           (PADX + 42 + 13 * CW, " · Nix · embedded Linux · device fleets · Apple containers", "subtext1", False)], t)); y += LH + 14
+    els.append(line(p, y, [(PADX + 42, "Embedded Linux · nix · nix-darwin · IoT · containers", "text", False)], t)); y += LH + 14
     t += 0.4
     els.append(prompt(p, y, STAMP, t)); y += LH + 4
     s, t = command(p, y, "nix flake show github:RobertDeRose", t + 0.4, 0.045); els.append(s); y += LH
