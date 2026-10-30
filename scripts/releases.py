@@ -13,9 +13,9 @@ PROJECTS = {
     "container-compose-plugin": "docker compose for container",
     "nix-hex-box": "Linux builder for nix-darwin",
 }
-MAX_CARDS = 6
-NEW_DAYS = 14  # releases younger than this get a "new" tag
-CARD_W, CARD_H = 268, 92
+MAX_CARDS = 4
+CARD_W, CARD_H = 400, 96  # two per row fill the README column; an odd last card spans both
+WIDE_W = 2 * CARD_W + 4
 CARD_DIR = "cards"
 
 PAL = {
@@ -36,21 +36,18 @@ def releases():
     return repos[:MAX_CARDS]
 
 
-def card(p, name, desc, tag, published, is_new):
-    date = published.strftime("%b %d")
+def card(p, name, desc, tag, published, w):
+    date = published.strftime("%b %d, %Y")
     pill_w = len(tag) * 7.8 + 16
-    new = (f'<rect x="{CARD_W - 54}" y="14" width="40" height="18" rx="9" fill="{p["peach"]}"/>'
-           f'<text x="{CARD_W - 34}" y="27" text-anchor="middle" font-size="11" font-weight="700" fill="{p["base"]}">new</text>'
-           if is_new else "")
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {CARD_W} {CARD_H}" width="{CARD_W}" height="{CARD_H}">
+    pill_x = w - 16 - pill_w
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {CARD_H}" width="{w}" height="{CARD_H}">
 <style>text {{ font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace; white-space: pre; }}</style>
-<rect x="0.5" y="0.5" width="{CARD_W - 1}" height="{CARD_H - 1}" rx="10" fill="{p["base"]}" stroke="{p["crust"]}"/>
-<text x="16" y="29" font-size="15" font-weight="700"><tspan fill="{p["mauve"]}">❄ </tspan><tspan fill="{p["text"]}">{name}</tspan></text>
-{new}
-<text x="16" y="51" font-size="12.5" fill="{p["subtext0"]}">{desc}</text>
-<rect x="16" y="62" width="{pill_w:.1f}" height="20" rx="5" fill="{p["green"]}"/>
-<text x="{16 + pill_w / 2:.1f}" y="76.5" text-anchor="middle" font-size="13" font-weight="700" fill="{p["base"]}">{tag}</text>
-<text x="{16 + pill_w + 12:.1f}" y="76.5" font-size="13" fill="{p["overlay1"]}">◷ {date}</text>
+<rect x="0.5" y="0.5" width="{w - 1}" height="{CARD_H - 1}" rx="10" fill="{p["base"]}" stroke="{p["crust"]}"/>
+<text x="18" y="34" font-size="16" font-weight="700"><tspan fill="{p["mauve"]}">❄ </tspan><tspan fill="{p["text"]}">{name}</tspan></text>
+<rect x="{pill_x:.1f}" y="17" width="{pill_w:.1f}" height="22" rx="11" fill="{p["green"]}"/>
+<text x="{pill_x + pill_w / 2:.1f}" y="32.5" text-anchor="middle" font-size="13" font-weight="700" fill="{p["base"]}">{tag}</text>
+<text x="18" y="60" font-size="13" fill="{p["subtext0"]}">{desc}</text>
+<text x="18" y="82" font-size="12" fill="{p["overlay1"]}">released {date}</text>
 </svg>
 '''
 
@@ -60,20 +57,20 @@ def main():
     for f in os.listdir(CARD_DIR):  # drop cards for projects that fell off the list
         os.remove(os.path.join(CARD_DIR, f))
 
-    today = datetime.date.today()
+    repos = releases()
     links = []
-    for r in releases():
+    for i, r in enumerate(repos):
+        w = WIDE_W if i == len(repos) - 1 and len(repos) % 2 else CARD_W
         rel = r["latestRelease"]
         tag, name = rel["tagName"], r["name"]
         published = datetime.datetime.fromisoformat(rel["publishedAt"].replace("Z", "+00:00")).date()
-        is_new = (today - published).days <= NEW_DAYS
         for theme, p in PAL.items():
             with open(f"{CARD_DIR}/{name}-{theme}.svg", "w") as f:
-                f.write(card(p, name, PROJECTS[name], tag, published, is_new))
+                f.write(card(p, name, PROJECTS[name], tag, published, w))
         links.append(
             f'<a href="{r["url"]}/releases/tag/{tag}"><picture>'
             f'<source media="(prefers-color-scheme: dark)" srcset="{CARD_DIR}/{name}-dark.svg">'
-            f'<img alt="{name} {tag}, released {published:%b %d, %Y}" src="{CARD_DIR}/{name}-light.svg" width="{CARD_W}">'
+            f'<img alt="{name} {tag}, released {published:%b %d, %Y}" src="{CARD_DIR}/{name}-light.svg" width="{w}">'
             f'</picture></a>')
 
     block = "<!-- releases:start -->\n<p>\n" + "\n".join(links) + "\n</p>\n<!-- releases:end -->"
