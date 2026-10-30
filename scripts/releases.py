@@ -2,7 +2,7 @@
 
 Usage: python3 scripts/releases.py   (needs the gh CLI with a token in GH_TOKEN or a logged-in session)
 """
-import datetime, json, os, re, subprocess
+import datetime, hashlib, json, os, re, subprocess
 
 OWNER = "RobertDeRose"
 # Active projects only, with descriptions short enough to fit a card.
@@ -64,13 +64,17 @@ def main():
         rel = r["latestRelease"]
         tag, name = rel["tagName"], r["name"]
         published = datetime.datetime.fromisoformat(rel["publishedAt"].replace("Z", "+00:00")).date()
+        files = {}
         for theme, p in PAL.items():
-            with open(f"{CARD_DIR}/{name}-{theme}.svg", "w") as f:
-                f.write(card(p, name, PROJECTS[name], tag, published, w))
+            svg = card(p, name, PROJECTS[name], tag, published, w)
+            # Content hash in the filename: GitHub's image proxy caches by URL, so a redesign needs a new URL.
+            files[theme] = f"{CARD_DIR}/{name}-{theme}-{hashlib.sha1(svg.encode()).hexdigest()[:8]}.svg"
+            with open(files[theme], "w") as f:
+                f.write(svg)
         links.append(
             f'<a href="{r["url"]}/releases/tag/{tag}"><picture>'
-            f'<source media="(prefers-color-scheme: dark)" srcset="{CARD_DIR}/{name}-dark.svg">'
-            f'<img alt="{name} {tag}, released {published:%b %d, %Y}" src="{CARD_DIR}/{name}-light.svg" width="{w}">'
+            f'<source media="(prefers-color-scheme: dark)" srcset="{files["dark"]}">'
+            f'<img alt="{name} {tag}, released {published:%b %d, %Y}" src="{files["light"]}" width="{w}">'
             f'</picture></a>')
 
     block = "<!-- releases:start -->\n<p>\n" + "\n".join(links) + "\n</p>\n<!-- releases:end -->"

@@ -42,10 +42,10 @@ flowchart LR
 
 <!-- releases:start -->
 <p>
-<a href="https://github.com/RobertDeRose/atomixos/releases/tag/v0.1.0"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/atomixos-dark.svg"><img alt="atomixos v0.1.0, released Oct 29, 2026" src="cards/atomixos-light.svg" width="400"></picture></a>
-<a href="https://github.com/RobertDeRose/nixstasis/releases/tag/v0.3.0"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/nixstasis-dark.svg"><img alt="nixstasis v0.3.0, released Oct 22, 2026" src="cards/nixstasis-light.svg" width="400"></picture></a>
-<a href="https://github.com/RobertDeRose/nix-hex-box/releases/tag/v1.3.0"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/nix-hex-box-dark.svg"><img alt="nix-hex-box v1.3.0, released Oct 22, 2026" src="cards/nix-hex-box-light.svg" width="400"></picture></a>
-<a href="https://github.com/RobertDeRose/container-compose-plugin/releases/tag/v0.3.0"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/container-compose-plugin-dark.svg"><img alt="container-compose-plugin v0.3.0, released Oct 18, 2026" src="cards/container-compose-plugin-light.svg" width="400"></picture></a>
+<a href="https://github.com/RobertDeRose/atomixos/releases/tag/v0.1.0"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/atomixos-dark-4208776d.svg"><img alt="atomixos v0.1.0, released Oct 29, 2026" src="cards/atomixos-light-67de978a.svg" width="400"></picture></a>
+<a href="https://github.com/RobertDeRose/nixstasis/releases/tag/v0.3.0"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/nixstasis-dark-33e91cc7.svg"><img alt="nixstasis v0.3.0, released Oct 22, 2026" src="cards/nixstasis-light-72e497f3.svg" width="400"></picture></a>
+<a href="https://github.com/RobertDeRose/nix-hex-box/releases/tag/v1.3.0"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/nix-hex-box-dark-4b2ff7c8.svg"><img alt="nix-hex-box v1.3.0, released Oct 22, 2026" src="cards/nix-hex-box-light-a8989530.svg" width="400"></picture></a>
+<a href="https://github.com/RobertDeRose/container-compose-plugin/releases/tag/v0.3.0"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/container-compose-plugin-dark-615a6b48.svg"><img alt="container-compose-plugin v0.3.0, released Oct 18, 2026" src="cards/container-compose-plugin-light-d1b9a5e7.svg" width="400"></picture></a>
 </p>
 <!-- releases:end -->
 
