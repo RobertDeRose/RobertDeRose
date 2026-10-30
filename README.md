@@ -3,17 +3,6 @@
   <img alt="Terminal: whoami prints Embedded Linux, nix, nix-darwin, IoT, containers; nix flake show lists nixstasis and atomixos under fleet, and container-compose-plugin, container-runtime-krun and nix-hex-box under darwin" src="banner-light.svg">
 </picture>
 
-### Building
-
-- [nixstasis](https://github.com/RobertDeRose/nixstasis): monitor and reach an IoT fleet with zero inbound ports on the devices. Elixir.
-- [atomixos](https://github.com/RobertDeRose/atomixos): NixOS trimmed for embedded devices.
-- [container-compose-plugin](https://github.com/RobertDeRose/container-compose-plugin): `docker compose` for Apple `container`. Swift.
-
-### Experimental
-
-- [container-runtime-krun](https://github.com/RobertDeRose/container-runtime-krun): swap in libkrun as Apple `container`'s VM runtime.
-- [nix-hex-box](https://github.com/RobertDeRose/nix-hex-box): a nix-darwin Linux builder running on Apple containers.
-
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'primaryColor':'#363a4f','primaryTextColor':'#cad3f5','primaryBorderColor':'#8aadf4','lineColor':'#8087a2','clusterBkg':'#24273a','clusterBorder':'#494d64','titleColor':'#b8c0e0','edgeLabelBackground':'#1e2030','fontFamily':'ui-monospace, SFMono-Regular, Menlo, monospace'}}}%%
 flowchart LR
