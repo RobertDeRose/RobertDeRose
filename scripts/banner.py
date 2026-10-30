@@ -68,7 +68,7 @@ TREE = [  # prefix, name, description, name color
     ("│   └───", "atomixos", "NixOS for embedded devices", "text"),
     ("└───", "darwin", "", "blue"),
     ("    ├───", "container-compose-plugin", "docker compose for Apple container", "text"),
-    ("    ├───", "container-runtime-krun", "libkrun VM runtime for Apple container", "text"),
+    ("    ├───", "container-krun-runtime", "libkrun VM runtime for Apple container", "text"),
     ("    └───", "nix-hex-box", "Linux builder for nix-darwin", "text"),
 ]
 

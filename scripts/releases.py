@@ -9,7 +9,7 @@ OWNER = "RobertDeRose"
 PROJECTS = {
     "nixstasis": "IoT fleets, zero inbound ports",
     "atomixos": "NixOS for embedded devices",
-    "container-runtime-krun": "libkrun runtime for container",
+    "container-krun-runtime": "libkrun runtime for container",
     "container-compose-plugin": "docker compose for container",
     "nix-hex-box": "Linux builder for nix-darwin",
 }

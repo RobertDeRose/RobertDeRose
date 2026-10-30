@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="banner-dark.svg">
-  <img alt="Terminal: whoami prints Embedded Linux, nix, nix-darwin, IoT, containers; nix flake show lists nixstasis and atomixos under fleet, and container-compose-plugin, container-runtime-krun and nix-hex-box under darwin" src="banner-light.svg">
+  <img alt="Terminal: whoami prints Embedded Linux, nix, nix-darwin, IoT, containers; nix flake show lists nixstasis and atomixos under fleet, and container-compose-plugin, container-krun-runtime and nix-hex-box under darwin" src="banner-light.svg">
 </picture>
 
 ```mermaid
@@ -14,7 +14,7 @@ flowchart LR
     direction TB
     hex["<b>nix-hex-box</b><br/>Linux builder for Nix"]
     compose["<b>container-compose-plugin</b><br/>docker compose"]
-    krun["<b>container-runtime-krun</b><br/>libkrun VM runtime"]
+    krun["<b>container-krun-runtime</b><br/>libkrun VM runtime"]
     tap["<b>homebrew-tap</b>"]
   end
   subgraph fleet["◉ devices in the field"]
@@ -24,6 +24,7 @@ flowchart LR
   end
   nixcfg -- flake input --> hex
   tap -- brew install --> compose
+  tap -- brew install --> krun
   atomix -- flake input --> stasis
   hex -- builds Linux for --> atomix
   hex -- builds Linux for --> nixcfg
@@ -42,10 +43,10 @@ flowchart LR
 
 <!-- releases:start -->
 <p>
+<a href="https://github.com/RobertDeRose/container-krun-runtime/releases/tag/v0.9.2"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/container-krun-runtime-dark-0e6e4c61.svg"><img alt="container-krun-runtime v0.9.2, released Oct 29, 2026" src="cards/container-krun-runtime-light-8a0c567a.svg" width="400"></picture></a>
 <a href="https://github.com/RobertDeRose/atomixos/releases/tag/v0.1.0"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/atomixos-dark-4208776d.svg"><img alt="atomixos v0.1.0, released Oct 29, 2026" src="cards/atomixos-light-67de978a.svg" width="400"></picture></a>
 <a href="https://github.com/RobertDeRose/nixstasis/releases/tag/v0.3.0"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/nixstasis-dark-33e91cc7.svg"><img alt="nixstasis v0.3.0, released Oct 22, 2026" src="cards/nixstasis-light-72e497f3.svg" width="400"></picture></a>
 <a href="https://github.com/RobertDeRose/nix-hex-box/releases/tag/v1.3.0"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/nix-hex-box-dark-4b2ff7c8.svg"><img alt="nix-hex-box v1.3.0, released Oct 22, 2026" src="cards/nix-hex-box-light-a8989530.svg" width="400"></picture></a>
-<a href="https://github.com/RobertDeRose/container-compose-plugin/releases/tag/v0.3.0"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/container-compose-plugin-dark-615a6b48.svg"><img alt="container-compose-plugin v0.3.0, released Oct 18, 2026" src="cards/container-compose-plugin-light-d1b9a5e7.svg" width="400"></picture></a>
 </p>
 <!-- releases:end -->
 
